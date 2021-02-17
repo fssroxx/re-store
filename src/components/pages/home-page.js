@@ -1,8 +1,14 @@
 import BookList from "../book-list";
+import ShoppingCardTable from "../shopping-card-table";
 
 
 const HomePage = () => {
-    return <BookList />
+    return (
+        <div>
+            <BookList />
+            <ShoppingCardTable />
+        </div>
+    )
 }
 
 
