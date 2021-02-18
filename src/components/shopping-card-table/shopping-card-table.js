@@ -1,5 +1,6 @@
 import './shopping-card-table.css';
 import { connect } from 'react-redux';
+import { bookAddedToCart, bookRemovedFromCart, allBooksRemovedFromCart} from '../../actions';
 
 const mapStateToProps = ({ cartItems, orderTotal }) => {
     return {
@@ -8,20 +9,10 @@ const mapStateToProps = ({ cartItems, orderTotal }) => {
     }
 }
 
-const mapDispatchToProps = () => {
-    return{
-        onIncrease: (id) => {
-            console.log(`increase ${id}`);
-        },
-
-         onDelete: (id) => {
-            console.log(`Decrease ${id}`);
-        },
-
-         onDecrease: (id) => {
-            console.log(`Delete ${id}`);
-        }
-    }
+const mapDispatchToProps = {
+        onIncrease: bookAddedToCart,
+        onDelete: allBooksRemovedFromCart,
+        onDecrease: bookRemovedFromCart
 }
 
 const ShoppingCardTable = ({ items, total, onIncrease, onDecrease, onDelete}) => {
@@ -37,7 +28,7 @@ const ShoppingCardTable = ({ items, total, onIncrease, onDecrease, onDelete}) =>
                     <button 
                     onClick={() => onDecrease(id)}
                     className="btn btn-outline-danger btn-sm float-right">
-                        <i className="fa fa-trash-o" />
+                        <i className="fa fa-minus-circle" />
                     </button>
                     <button 
                     onClick={() => onIncrease(id)}
@@ -46,8 +37,8 @@ const ShoppingCardTable = ({ items, total, onIncrease, onDecrease, onDelete}) =>
                     </button>
                     <button 
                     onClick={() => onDelete(id)}
-                    className="btn btn-outline-warning btn-sm float-right">
-                        <i className="fa fa-minus-circle" />
+                    className="btn btn-outline-warning btn-sm float-right ">
+                        <i className="fa fa-trash-o" />
                     </button>
                 </td>
             </tr>
