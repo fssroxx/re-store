@@ -1,3 +1,7 @@
+![image](https://user-images.githubusercontent.com/63402014/110255704-2101d900-7fa6-11eb-9a0f-5fa00e47da93.png)
+
+Страница интернет магазина по продаже книг.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
